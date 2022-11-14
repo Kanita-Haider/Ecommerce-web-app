@@ -41,6 +41,19 @@ body{
     padding: 40px 80px;
 }
 
+button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
 /* header */
 
 .logo{
@@ -142,6 +155,7 @@ body{
 
 }
 
+/*----Landing Page----- Feature------*/
 #feature{
     display: flex;
     align-items: center;
@@ -202,6 +216,8 @@ body{
     background-color: #cdd4f8;
     
 }
+
+/*----Landing Page----- Featured PRODUCTS------*/
 
 #product1{
     text-align: center;
@@ -278,6 +294,44 @@ body{
     right: 10px;
 }
 
+/*----Landing Page----- 0%  Sale BANNER  ------*/
+
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("img/git/banner/b2.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+}
+
+#banner h4{
+    color:#fff;
+    font-size: 16px;
+}
+
+#banner h2{
+    color:#fff;
+    font-size: 30px;
+    padding: 10px 0;
+
+}
+
+#banner h2 span{
+    color: #ef3636;
+
+}
+
+#banner button:hover{
+        background: #088178;
+        color: #fff;
+}
+/*----Landing Page----- Newslatter------*/
 .newsletter{
     display: flex;
     justify-content: space-between;
