@@ -69,10 +69,7 @@ button.white{
 
 /* header */
 
-.logo{
-    height: 10%;
-    width: 30%;
-}
+
 #header{
     display: flex;
     align-items: center;

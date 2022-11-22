@@ -6,6 +6,8 @@
 
         <x-jet-validation-errors class="mb-4" />
 
+        <center><a href="#"><img src="project/Img/git/logo.png"  class="logo" alt="logo"</a></center>
+
         <form method="POST" action="{{ route('register') }}">
             @csrf
 

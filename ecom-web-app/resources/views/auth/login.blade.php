@@ -1,10 +1,16 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
+    <x-slot name="logo">
             <x-jet-authentication-card-logo />
+            
         </x-slot>
+        
 
         <x-jet-validation-errors class="mb-4" />
+
+        
+        <center><a href="#"><img src="project/Img/git/logo.png"  class="logo" alt="logo"</a></center>
+        
 
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
@@ -34,8 +40,8 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('Not Registered Yet?') }}
                     </a>
                 @endif
 
