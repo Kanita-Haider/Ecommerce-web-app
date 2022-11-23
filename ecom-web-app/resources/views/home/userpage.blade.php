@@ -15,39 +15,13 @@
   </head>
 
   <body>
-    <section id="header">
-      <a href="#"><img src="project/Img/git/logo.png" class="logo" alt="logo"</a>
-      <div>
-        <ul id="navbar">
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          @if (Route::has('login'))
-          @auth
-           <x-app-layout>
-          </x-app-layout>
-          <li>
-            <a href="{{ route('login') }}"><i class="fa-solid fa-user"></i></a>
-          </li>
-          @endauth
-          @endif
-          <li>
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-        </ul>
-      </div>
-    </section>
+
+    @include ('home.header')
 
     <section id="hero">
-      <h3 >Tade-in-Offer</h3>
-      <h2 style="font-size: 50px;
-    line-height: 64px;
-    color: #222;">Super Value Deals</h2>
-      <h1 style="font-size: 50px;
-    line-height: 64px;
-    #088178;">On All Products</h1>
+      <k3 >Tade-in-Offer</k3>
+      <k2 >Super Value Deals</k2>
+      <k1 >On All Products</k1>
       <p>Save more with Coupons & up to 70% off!</p>
       <!--<button id="btn1"></button>
         <button id="btn2"></button>
@@ -61,28 +35,28 @@
     <section id="feature" class="section-p1">
       <div id="fe-box">
         <img id="freeship" src="project/Img/shopping.jpg" alt="" />
-        <h3>Shop Anywhere</h3>
+        <k3>Shop Anywhere</k3>
       </div>
       <div id="fe-box">
         <img id="freeship" src="project/Img/free shipping green.jpg" alt="" />
-        <h3>Free Shipping</h3>
+        <k3>Free Shipping</k3>
       </div>
       <div id="fe-box">
         <img id="freeship" src="project/Img/onlineorder.jpg" alt="" />
-        <h3>Return Policy</h3>
+        <k3>Return Policy</k3>
       </div>
       <div id="fe-box">
         <img id="freeship" src="project/Img/8449757_3916946.jpg" alt="" />
-        <h3>Happy Sales</h3>
+        <k3>Happy Sales</k3>
       </div>
       <div id="fe-box">
         <img id="freeship" src="project/Img/support.jpg" alt="" />
-        <h3>24/7 Support</h3>
+        <k3>24/7 Support</k3>
       </div>
     </section>
 
     <section id="product1" class="section-p1">
-      <h2>New Arrivals</h2>
+      <k2>New Arrivals</k2>
       <p>Winter Collections New Modern Design</p>
       <div class="pro-container">
         <div class="pro">
@@ -217,13 +191,13 @@
     </section>
 
     <section id="banner">
-      <h4>Repair Services</h4>
-      <h2>Up to <span>70% off</span> - All t-shirts & Accesssories</h2>
+      <k4>Repair Services</k4>
+      <k2>Up to <span>70% off</span> - All t-shirts & Accesssories</k2>
       <button class="normal">Explore More</button>
     </section>
 
     <section id="product1" class="section-p1" name="New Arrivals">
-      <h2>Featured Products</h2>
+      <k2>Featured Products</k2>
       <p>Mens Collections New Modern Design</p>
       <div class="pro-container">
         <div class="pro">
@@ -360,13 +334,13 @@
     <section id="sm-banner" class="section-p1">
         <div class="banner-box">
             <h4>Crazy Deals</h4>
-            <h2>Buy 1 Get 1 Free</h2>
+            <k2>Buy 1 Get 1 Free</k2>
             <span>The best Classic Dress is on Sale at Cara</span>
             <button class="white">Learn More</button>
         </div>
         <div class="banner-box banner-box2">
             <h4>Spring/Summer</h4>
-            <h2>Upcomming Season</h2>
+            <k2>Upcomming Season</k2>
             <span>The best Classic Dress is on Sale at Cara</span>
             <button class="white">Collection</button>
         </div>
@@ -374,16 +348,16 @@
     
     <section id="banner3">
         <div class="banner-box">
-            <h2>Seasonal Sale</h2>
-            <h3>Winter Collection -50% </h3>
+            <k2>Seasonal Sale</k2>
+            <k3>Winter Collection -50% </k3>
         </div>
         <div class="banner-box banner-box2">
-            <h2>Seasonal Sale</h2>
-            <h3>Winter Collection -50% </h3>
+            <k2>Seasonal Sale</k2>
+            <k3>Winter Collection -50% </k3>
         </div>
         <div class="banner-box banner-box3">
-            <h2>Seasonal Sale</h2>
-            <h3>Winter Collection -50% </h3>
+            <k2>Seasonal Sale</k2>
+            <k3>Winter Collection -50% </k3>
         </div>
     </section>
     <section class="newsletter" >

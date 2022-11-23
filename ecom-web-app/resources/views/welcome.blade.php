@@ -16,7 +16,7 @@
 
         <style>
             body {
-                font-family: 'Nunito', sans-serif;
+                font-family: 'League Spartan', Nunito, sans-serif;
             }
         </style>
     </head>

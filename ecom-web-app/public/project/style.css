@@ -7,18 +7,34 @@
     font-family:  'League Spartan', sans-serif;;
 }
 
-h1{
+k1{
     font-size: 50px;
     line-height: 64px;
     color: #222;
 }
 
-h2{
+k2{
     font-size: 50px;
     line-height: 64px;
     color: #222;
+    font-weight: 500;
 }
-h6{
+
+k3{
+    font-size: 20px;
+    line-height: 20px;
+    color: #222;
+    font-weight: 600;
+}
+
+k4{
+    font-size: 22px;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+k6{
     font-size: 50px;
     line-height: 64px;
     color: #222;
@@ -138,14 +154,25 @@ button.white{
         
     }
 
-    #hero h3{
+    #hero k3{
         padding-bottom: 15px;
+        font-weight: 600;
+
     }
 
-    #hero h1{
+    #hero k1{
         color: #088178;
+        font-size: 50px;
+       line-height: 64px;
+       font-weight: 600;
     }
 
+    #hero k2{
+       
+    color: #222;
+        font-size: 50px;
+       line-height: 64px;
+    }  
 /*
 #btn1{
     background-image: url(Img/back-arrow.png);
@@ -160,7 +187,7 @@ button.white{
     height: 80px;
 } */
 
-.arrow-icon img{    
+#hero .arrow-icon img{    
     width:40px;
     margin-right: 25px;
     margin-top: 40px;
@@ -201,7 +228,7 @@ button.white{
     width: 100%;
 }
 
-#feature #fe-box h3{
+#feature #fe-box k3{
     display: inline-block;
     padding: 9px 8px 6px 8px;
     line-height: 1;
@@ -212,19 +239,19 @@ button.white{
 
 }
 
-#feature #fe-box:nth-child(2) h3{
+#feature #fe-box:nth-child(2) k3{
     
     background-color: #d1e8f2;
 }
 
-#feature #fe-box:nth-child(3) h3{
+#feature #fe-box:nth-child(3) k3{
     background-color: #fddde4;
 }
-#feature #fe-box:nth-child(4) h3{
+#feature #fe-box:nth-child(4) k3{
     background-color: #fff2e5;
     
 }
-#feature #fe-box:nth-child(5) h3{
+#feature #fe-box:nth-child(5) k3{
     background-color: #cdd4f8;
     
 }
@@ -327,14 +354,14 @@ button.white{
     font-size: 16px;
 }
 
-#banner h2{
+#banner k2{
     color:#fff;
     font-size: 30px;
     padding: 10px 0;
 
 }
 
-#banner h2 span{
+#banner k2 span{
     color: #ef3636;
 
 }
@@ -387,7 +414,7 @@ button.white{
     font-weight: 300;
 }
 
-#sm-banner h2{
+#sm-banner k2{
     color:#fff;
     font-size: 28px;
     font-weight: 800;
@@ -427,12 +454,12 @@ button.white{
     background-image: url("img/git/banner/b18.jpg");
 }
 
-#banner3 h2{
+#banner3 k2{
     color:#fff;
     font-weight: 900;
     font-size: 22px;
 }
-#banner3 h3{
+#banner3 k3{
     color: #ec544e;;
     font-weight: 900;
     font-size: 22px;
