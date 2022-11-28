@@ -1,8 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/public">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
 
     <script
       src="https://kit.fontawesome.com/0df4ee1a7f.js"
@@ -12,48 +15,66 @@
     <link rel="stylesheet" href="project/style.css" />
     <script src="project/script.js"></script>
     
+    <style type="text/css">
+    #normal{
+        margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+    </style>
+
   </head>
 
   <body>
 
     @include ('home.header')
 
-    <section id="hero">
-      <k3 >Tade-in-Offer</k3>
-      <k2 >Super Value Deals</k2>
-      <k1 >On All Products</k1>
-      <p>Save more with Coupons & up to 70% off!</p>
-      <!--<button id="btn1"></button>
-        <button id="btn2"></button>
-        -->
-      <div class="arrow-icon">
-        <a href=""><img src="project/Img/back-arrow.png" class="btn" /></a>
-        <a href=""> <img src="project/Img/next-arrow.png" /></a>
-      </div>
-    </section>
+    
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+          <img   src="/product/{{$product->image}}"  width="100%" id="MainImg" alt="">
+          </div>
+        </div>
+  
+        <div class="single-pro-details">
+          <h6>Home / {{$product->catagory}}</h6>
+          <h4>{{$product->title}}</h4>
+          <h2>Tk. {{$product->price}}</h2>
 
-    <section id="feature" class="section-p1">
-      <div id="fe-box">
-        <img id="freeship" src="project/Img/shopping.jpg" alt="" />
-        <k3>Shop Anywhere</k3>
-      </div>
-      <div id="fe-box">
-        <img id="freeship" src="project/Img/free shipping green.jpg" alt="" />
-        <k3>Free Shipping</k3>
-      </div>
-      <div id="fe-box">
-        <img id="freeship" src="project/Img/onlineorder.jpg" alt="" />
-        <k3>Return Policy</k3>
-      </div>
-      <div id="fe-box">
-        <img id="freeship" src="project/Img/8449757_3916946.jpg" alt="" />
-        <k3>Happy Sales</k3>
-      </div>
-      <div id="fe-box">
-        <img id="freeship" src="project/Img/support.jpg" alt="" />
-        <k3>24/7 Support</k3>
-      </div>
-    </section>
+          <form action="{{url('add_cart',$product->id)}}" method="POST">
+
+            @csrf
+
+          <select>
+            <option>Select Size</option>
+             <option>XL</option>
+             <option>XXL</option> 
+             <option>Small</option>
+              <option>Large</option>
+          </select>
+          <input type="number" name="quantity"value="1" min="1">
+          
+          <div>
+          <input style="width: 100px; background:#088178;color: #fff;"
+                    id="normal" type="submit" value="Add to cart">  
+        </div>   
+
+        </form>
+
+          <h4>Product Details</h4>
+          <SPAN>{{$product->description}}</SPAN>
+        </div>
+      </section>
+
+    
 
     <section id="product1" class="section-p1">
       <k2>New Arrivals</k2>
@@ -190,57 +211,14 @@
       </div>
     </section>
 
-    <section id="banner">
-      <k4>Repair Services</k4>
-      <k2>Up to <span>70% off</span> - All t-shirts & Accesssories</k2>
-      <button class="normal">Explore More</button>
-    </section>
+    
 
-    @include ('home.featured_product')
-
-    <section id="sm-banner" class="section-p1">
-        <div class="banner-box">
-            <h4>Crazy Deals</h4>
-            <k2>Buy 1 Get 1 Free</k2>
-            <span>The best Classic Dress is on Sale at Cara</span>
-            <button class="white">Learn More</button>
-        </div>
-        <div class="banner-box banner-box2">
-            <h4>Spring/Summer</h4>
-            <k2>Upcomming Season</k2>
-            <span>The best Classic Dress is on Sale at Cara</span>
-            <button class="white">Collection</button>
-        </div>
-    </section>
 
     
     
-    <section id="banner3">
-        <div class="banner-box">
-            <k2>Seasonal Sale</k2>
-            <k3>Winter Collection -50% </k3>
-        </div>
-        <div class="banner-box banner-box2">
-            <k2>Seasonal Sale</k2>
-            <k3>Winter Collection -50% </k3>
-        </div>
-        <div class="banner-box banner-box3">
-            <k2>Seasonal Sale</k2>
-            <k3>Winter Collection -50% </k3>
-        </div>
-    </section>
-
-    <!--<section class="newsletter" >
-        <div class="newstext" >
-            <h4>Sign Up For Newsletter</h4>
-            <p>Get E-mail Updates about our latest Shop and<span>Special offers.</span></p>
-        </div>
-        <div class="form" >
-            <input type="text" placeholder="Your Email Address">
-            <button>Sign Up</button>
-        </div>
-    </section>
-  -->
+   
+    
+ 
 
   @include ('home.footer')
     

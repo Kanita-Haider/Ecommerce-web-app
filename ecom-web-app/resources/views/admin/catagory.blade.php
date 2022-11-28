@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ecommerce Admin</title>
+    <title>Corona Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="admin/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css">
@@ -21,7 +21,40 @@
     <link rel="stylesheet" href="admin/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
-  </head>
+
+
+<style type="text/css">
+    .div_center{
+        text-align:center;
+        padding-top: 40px ;
+        padding-bottom: 40px;
+    }
+
+    .h2_font{
+        font-size:40px;
+        padding-bottom: 40px;
+    }
+
+    .input_col{
+        color: black ;
+      
+    }
+    .table{
+
+        padding-top: 40px;
+        margin:auto;
+        width:50%;
+        text-align:center;
+        
+    }
+    tr{
+        color:white;
+    }
+</style>
+
+</head>
+
+
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
@@ -34,7 +67,34 @@
                 
                 
         <!-- partial -->
-        @include('admin.body'); 
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="div_center">
+            <h2 class="h2_font" >Catagory</h2>
+
+            <form action="{{url('/add_catagory')}}" method="POST">
+
+            @csrf
+                <input type="text" class="input_col" name="catagory" placeholder="Catagory Name">
+                <input type="Submit" name="submit" class="btn btn-primary" value="Add Catagory">
+            </form>
+            </div>
+            <div >
+            <table class="table" >
+            <tr>
+                <td>Catagory Name</td>
+                <td>Action</td>
+            </tr>
+            @foreach($data as $data )
+            <tr>
+                <td>{{$data->catagory_name}}</td>
+                <td><a class="btn btn-danger" href="{{url('delete_catagory',$data->id)}}">Delete</a></td>
+            </tr>
+            @endforeach
+            </table>
+           </div>  
+            </div>
+        </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>

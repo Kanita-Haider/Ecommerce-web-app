@@ -21,7 +21,32 @@
     <link rel="stylesheet" href="admin/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+
+    <style type="text/css">
+
+    
+    .h2_font{
+        font-size:40px;
+        padding-bottom: 40px;
+    }
+    .div_center{
+        text-align:center;
+        padding-top: 40px ;
+        padding-bottom: 40px;
+        
+    }
+
+
+
+    tr{
+        color:white;
+        
+    }
+    
+
+    </style>
   </head>
+
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
@@ -34,7 +59,45 @@
                 
                 
         <!-- partial -->
-        @include('admin.body'); 
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div  class="div_center">
+                <h2 class="h2_font" >All Product</h2>
+                <table class="table" >
+                    <tr>
+                        <th>Product Title</th>
+                        <th>Description</th>
+                        <th>Catagory</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        
+                        <th>Edit</th>
+                        <th>Delete</th>
+
+                    </tr>
+                    @foreach($product as $product)
+                    <tr>
+                        <td>{{$product->title}}</td>
+                        <td>{{$product->description}}</td>
+                         <td>{{$product->catagory}}</td>
+                         <td>{{$product->quantity}}</td>
+                         <td>{{$product->price}}</td>
+                         <td >
+                            <img style="width:100px; height:100px; border-radius:10px;  " src="/product/{{$product->image}}">
+                         </td>
+                         <td>
+                            <a href="{{url('update_product',$product->id)}}" class="btn btn-primary" >Edit</a>
+                         </td>
+                         <td>
+                            <a href="{{url('delete_product',$product->id)}}" class="btn btn-danger">Delete</a>
+                         </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+            </div>
+        </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
