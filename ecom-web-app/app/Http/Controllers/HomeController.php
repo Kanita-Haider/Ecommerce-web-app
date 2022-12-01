@@ -91,6 +91,9 @@ class HomeController extends Controller
 
     }
 
+    public function cash_on(){
 
+        return view('home.cash_on');
+    }
 
 }

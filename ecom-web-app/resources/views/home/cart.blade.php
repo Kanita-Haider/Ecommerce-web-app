@@ -90,6 +90,24 @@
     <h3>Cart Total</h3>
     <table>
       <tr>
+        <td>Order Id</td>
+        <td>{{$cart->id}}</td>
+      </tr>
+      <tr>
+        <td>Customer Name</td>
+        <td>{{$cart->name}}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>{{$cart->address}}</td>
+      </tr>
+
+      <tr>
+        <td>Phone</td>
+        <td>{{$cart->phone}}</td>
+      </tr>
+
+      <tr>
         <td>Cart Subtotal</td>
         <td>{{$totalprice}}</td>
       </tr>
@@ -104,7 +122,7 @@
     </table>
 
     <h3>Proceed to checkout</h3>
-    <a style=" background:#088178;color: #fff;"  id="normal"  > Cash on Delivery</a>
+    <a style=" background:#088178;color: #fff;"  id="normal" href="{{url('cash_on')}}" > Cash on Delivery</a>
      <a style=" background:#088178;color: #fff;" id="normal"  >Pay Using Card</a>
     
 
