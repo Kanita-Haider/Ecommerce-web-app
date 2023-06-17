@@ -123,7 +123,7 @@
 
     <h3>Proceed to checkout</h3>
     <a style=" background:#088178;color: #fff;"  id="normal" href="{{url('cash_on')}}" > Cash on Delivery</a>
-     <a style=" background:#088178;color: #fff;" id="normal"  >Pay Using Card</a>
+     <a style=" background:#088178;color: #fff;" id="normal" href="{{url('stripe',$totalprice)}}" >Pay Using Card</a>
     
 
 

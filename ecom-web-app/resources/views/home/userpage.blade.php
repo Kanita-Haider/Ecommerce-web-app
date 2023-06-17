@@ -25,11 +25,13 @@
       <p>Save more with Coupons & up to 70% off!</p>
       <!--<button id="btn1"></button>
         <button id="btn2"></button>
-        -->
+        
       <div class="arrow-icon">
         <a href=""><img src="project/Img/back-arrow.png" class="btn" /></a>
         <a href=""> <img src="project/Img/next-arrow.png" /></a>
       </div>
+
+      -->
     </section>
 
     <section id="feature" class="section-p1">

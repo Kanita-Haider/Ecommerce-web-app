@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order;
+
+use Session;
+
+use Stripe;
 
 
 class HomeController extends Controller
@@ -35,6 +40,20 @@ class HomeController extends Controller
         return view('home.shop',compact('product'));
     }
 
+    public function contact(){
+
+        return view('home.contact');
+    }
+
+    public function about(){
+
+        return view('home.about');
+    }
+
+    public function blog(){
+
+        return view('home.blog');
+    }
     
 
     public function product_details($id){
@@ -72,18 +91,24 @@ class HomeController extends Controller
         }
     }
 
-    public function view_cart(){
-        if(Auth::id()){
-            
-        $id=Auth::User()->id;
-        $cart=cart::where('user_id','=',$id)->get();
-        return view('home.cart',compact('cart'));
-        }
-        else{
+ 
+    public function view_cart()
+    {
+        
+         $cart = [];
+    
+        if (Auth::id()) {
+            $id = Auth::user()->id;
+            $cart = Cart::where('user_id', '=', $id)->get();
+            return view('home.cart', ['cart' => $cart]);
+        } else {
             return redirect('login');
         }
 
-    }
+            return view('home.cart');
+        }
+    
+
     public function remove_cart($id){
         $cart=cart::find($id);
         $cart->delete();
@@ -93,7 +118,75 @@ class HomeController extends Controller
 
     public function cash_on(){
 
+        $user=Auth::user();
+        $userid=$user->id;
+        $data=cart::where('user_id','=',$userid)->get();
+
+        foreach($data as $data){
+
+        $order=new order;
+        $order->name=$data->name;
+        $order->email=$data->email;
+        $order->phone=$data->phone;
+        $order->address=$data->address;
+        $order->user_id=$data->user_id;
+
+        $order->product_title=$data->product_title;
+        $order->price=$data->price ;
+        $order->quantity=$data->quantity;
+        $order->image=$data->image;
+        $order->product_id=$data->product_id;
+
+        $order->payment_status='cash on delivery';
+        $order->delivery_status='processing';
+
+        $order->save();
+
+        $cart_id=$data->id;
+        $cart=cart::find($cart_id);
+        $cart->delete();
+
+
+        }
+
         return view('home.cash_on');
     }
 
+
+    public function stripe($totalprice){
+
+        return view('home.stripe',compact('totalprice'));
+    }
+
+    public function stripePost(Request $request,$totalprice)
+
+    {
+
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+
+    
+
+        Stripe\Charge::create ([
+
+                "amount" => $totalprice ,
+
+                "currency" => "usd",
+
+                "source" => $request->stripeToken,
+
+                "description" => "Thanks For Payment" 
+
+        ]);
+
+      
+
+        Session::flash('success', 'Payment successful!');
+
+              
+
+        return back();
+
+    }
 }
+
+

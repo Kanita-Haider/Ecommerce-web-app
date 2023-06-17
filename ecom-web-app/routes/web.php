@@ -29,6 +29,9 @@ Route::middleware([
 route::get('/redirect',[HomeController::class,'redirect']);
 
 route::get('/view_shop',[HomeController::class,'view_shop']);
+route::get('/about',[HomeController::class,'about']);
+route::get('/contact',[HomeController::class,'contact']);
+route::get('/blog',[HomeController::class,'blog']);
 
 route::get('/view_cart',[HomeController::class,'view_cart']);
 
@@ -54,7 +57,13 @@ route::post('/update_product_confirm/{id}',[AdminController::class,'update_produ
 route::get('/product_details/{id}',[HomeController::class,'product_details']);
 
 route::post('/add_cart/{id}',[HomeController::class,'add_cart']);
+route::post('/view_cart',[HomeController::class,'view_cart']);
+
 
 route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
 
 route::get('/cash_on',[HomeController::class,'cash_on']);
+
+route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
+
+Route::post('stripe/{totalprice}', [HomeController::class,'stripePost'])->name('stripe.post');

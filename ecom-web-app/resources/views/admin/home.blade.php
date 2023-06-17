@@ -25,17 +25,14 @@
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
-      
-          @include('admin.sidebar');    
-                  
+      @include('admin.sidebar');    
       <!-- partial -->
-     
-      @include('admin.header');  
-                
-                
+      @include('admin.header'); 
         <!-- partial -->
         @include('admin.body'); 
     <!-- container-scroller -->
+    <!-- plugins:js -->
+     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
