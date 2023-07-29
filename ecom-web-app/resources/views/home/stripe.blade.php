@@ -3,25 +3,33 @@
 <html>
 
 <head>
-
-    <title>Laravel 9 - Stripe Payment Gateway Integration Example - ItSolutionStuff.com</title>
+    <base href="/public">
+    <title>Ecommerce Website</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script
+    src="https://kit.fontawesome.com/0df4ee1a7f.js"
+    crossorigin="anonymous"
+  ></script>
+ 
+  <link rel="stylesheet" href="project/style.css" />
+  <script src="script.js"></script>
 
 </head>
 
 <body>
 
     
-
+    @include ('home.header')
 <div class="container">
 
     
-
-    <h1>Pay Using Your Card <br/></h1>
-    <h4>Total Amount Tk. {{$totalprice}} </h4>
+    <div style="text-align: center "> <h1>Pay Using Your Card <br/></h1>
+        <h4 style="text-align: center ">Total Amount Tk. {{$totalprice}} </h4></div>
+   
 
     
 
@@ -79,7 +87,7 @@
 
                             <div class='col-xs-12 form-group required'>
 
-                                <label class='control-label'>Name on Card</label> <input
+                                <label class='control-label'>Name on Card</label> <input style="font-size: 10px;  "
 
                                     class='form-control' size='4' type='text'>
 
@@ -159,7 +167,9 @@
 
                             <div class="col-xs-12">
 
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now </button>
+                          <input style="font-size: 14px;
+                          font-weight: 600;
+                          padding: 15px 30px; background:#088178;color: #fff; "  type="Submit" name="" value="Pay Now"> 
 
                             </div>
 
@@ -182,6 +192,7 @@
 </div>
 
     
+  @include ('home.footer')
 
 </body>
 
